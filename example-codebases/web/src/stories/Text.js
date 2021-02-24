@@ -1,29 +1,28 @@
 import React from 'react';
+import styled from "styled-components";
 
 import { Typograph, Typography, DesignLanguage, Diez } from 'diez-design-system';
-const diezDs = new Diez(DesignLanguage);
+
+
+const ds_text = new Typography();
+const text = ds_text.capi.typography.displayTablet;
+console.log(ds_text.capi.typography.displayTablet.fontFamily);
+
+const TextStyled = styled.p`
+    line-height: ${ds_text.capi.typography.displayTablet.lineHeight}px;
+    font-size: ${ds_text.capi.typography.displayTablet.fontSize}px;
+    letter-spacing: ${ds_text.capi.typography.displayTablet.letterSpacing}px;
+    font-family: ${ds_text.capi.typography.displayTablet.fontFamily};
+`;
 
 export const Text = () => {
-    console.log(diezDs);
+    
 
-    // Listen to changes in the design language
-    diezDs.attach((ds) => {
-        // The ds has been updated!
-        console.log("attach",ds.typography.capi.typography.displayTablet);
-
-    });
-    const ds_text = new Typography();
-    // console.log(ds_text.capi.typography.displayTablet.applyStyle);
-    const text = ds_text.capi.typography.displayTablet;
     return (
         <>
-            {/* {/* <p style={ds_text.capi.typography.displayTablet}>
-            </p> */}
-
-            {/* {text} */}
-            <p style={ds_text.capi.typography.displayTablet}>
+            <TextStyled>
                 hola
-            </p>
+            </TextStyled>
         </>
     );
 }

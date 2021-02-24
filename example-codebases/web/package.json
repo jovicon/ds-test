@@ -11,7 +11,8 @@
   "dependencies": {
     "diez-design-system": "file:../../design-language/build/diez-design-system-web",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
